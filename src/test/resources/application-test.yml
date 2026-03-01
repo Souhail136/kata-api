@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: kata-api-test
+
+# L'URL du catalogue n'est pas utilisée sous le profil test
+# (InMemoryProductCatalog remplace ProductCatalogAdapter via @Primary)
+# On la définit quand même pour éviter une erreur de démarrage sur @Value
+catalog:
+  api:
+    url: http://localhost/mock-not-used-in-tests
+
+logging:
+  level:
+    com.kata.shopping: WARN
